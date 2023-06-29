@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Task</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+       max-width: 800px;
+        margin: 20px auto;
+      }
+      .form {
+        background-color: #eee;
+        border-radius: 6px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+      }
+      @media (max-width:450px) {
+        .form{
+          flex-direction: column;
+        }
+      }
+      .input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        font-size: 20px;
+        border-radius: 6px;
+        flex: 1;
+      }
+      @media (max-width:450px) {
+        .form input{
+          width: 100%;
+        }
+        .form input:last-of-type{
+          margin-top: 10px;
+          width: 80%;
+        }
+      }
+      .input:focus {
+        outline: none;
+        padding: 20px 10px;
+      }
+      .add {
+        border: none;
+        background-color: #f44336;
+        color: white;
+        padding: 10px;
+        border-radius: 6px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .tasks {
+        background-color: #eee;
+        margin-top: 20px;
+        border-radius: 6px;
+        padding: 20px;
+      }
+      .tasks .task {
+        background-color: white;
+        padding: 15px 0px 15px 10px ;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s;
+        cursor: pointer;
+        border: 1px solid #ccc;
+      }
+      .tasks .task:not(:last-child) {
+        margin-bottom: 15px;
+      }
+      .tasks .task:hover {
+        background-color: #f7f7f7;
+      }
+      .tasks .task.done {
+        background-color: #ffffff26;
+        color: #999;
+      }
+      .tasks .task span {
+        font-weight: bold;
+    position: relative;
+    transform: rotate(90deg);
+    font-size: 10px;
+    display: block;
+    background-color: red;
+    color: white;
+    padding: 2px;
+    min-width: 45px;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    margin: -19px;
+    cursor: pointer;
+      }
+      .tasks .task.done span{
+        text-align: end;
+        /* letter-spacing: 0; */
+
+      }
+      .tasks .task.done span::before{
+        content: "7";
+    position: absolute;
+    transform: rotateX(180deg);
+    line-height: 20px;
+    border-radius: 0px 9px 9px 4px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0 3px;
+    background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form">
+        <input type="text" class="input" />
+        <input type="submit" class="add" value="Add Task" />
+      </div>
+      <div class="tasks"></div>
+    </div>
+    
+    <script src="(15).js"></script>
+    <!-- <script src="(15 copy).js"></script> -->
+  </body>
+</html>
